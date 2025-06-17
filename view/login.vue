@@ -16,7 +16,6 @@
     </div>
   </div>
 </template>
-
 <script setup>
 const userAccount = ref<string>("");
 const password = ref<string>("");
