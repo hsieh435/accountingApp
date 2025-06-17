@@ -25,7 +25,10 @@ const password = ref<string>("");
 const handleLogin = () => {
   console.log('登入資訊:', { userAccount: userAccount.value, password: password.value });
   // 在此加入 API 呼叫與驗證邏輯
+  console.log('登入成功！');
 };
+
+
 
 
 </script>
