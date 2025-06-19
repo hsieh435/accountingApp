@@ -1,4 +1,3 @@
-// router/index.ts
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
 
 const router = createRouter({
