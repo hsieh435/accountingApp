@@ -5,7 +5,7 @@
 -- Dumped from database version 17.5
 -- Dumped by pg_dump version 17.5
 
--- Started on 2025-06-19 21:15:15
+-- Started on 2025-06-20 20:49:04
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -30,7 +30,7 @@ CREATE SCHEMA pgagent;
 ALTER SCHEMA pgagent OWNER TO postgres;
 
 --
--- TOC entry 5005 (class 0 OID 0)
+-- TOC entry 4995 (class 0 OID 0)
 -- Dependencies: 8
 -- Name: SCHEMA pgagent; Type: COMMENT; Schema: -; Owner: postgres
 --
@@ -47,7 +47,7 @@ CREATE EXTENSION IF NOT EXISTS pgagent WITH SCHEMA pgagent;
 
 
 --
--- TOC entry 5006 (class 0 OID 0)
+-- TOC entry 4996 (class 0 OID 0)
 -- Dependencies: 2
 -- Name: EXTENSION pgagent; Type: COMMENT; Schema: -; Owner: 
 --
@@ -64,7 +64,7 @@ CREATE EXTENSION IF NOT EXISTS pgcrypto WITH SCHEMA public;
 
 
 --
--- TOC entry 5007 (class 0 OID 0)
+-- TOC entry 4997 (class 0 OID 0)
 -- Dependencies: 3
 -- Name: EXTENSION pgcrypto; Type: COMMENT; Schema: -; Owner: 
 --
@@ -110,53 +110,7 @@ CREATE TABLE public.accounts_list (
 ALTER TABLE public.accounts_list OWNER TO postgres;
 
 --
--- TOC entry 241 (class 1259 OID 16784)
--- Name: address_book; Type: TABLE; Schema: public; Owner: postgres
---
-
-CREATE TABLE public.address_book (
-    sid integer NOT NULL,
-    name character varying(20),
-    mobile character varying(20),
-    birthday date,
-    email character varying(50),
-    address character varying(20),
-    "createdDate" timestamp with time zone,
-    "explainColumn" character varying(255),
-    "movedRecord" character varying(255),
-    moved character varying(5)
-);
-
-
-ALTER TABLE public.address_book OWNER TO postgres;
-
---
--- TOC entry 240 (class 1259 OID 16783)
--- Name: address_book_sid_seq; Type: SEQUENCE; Schema: public; Owner: postgres
---
-
-CREATE SEQUENCE public.address_book_sid_seq
-    AS integer
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-
-ALTER SEQUENCE public.address_book_sid_seq OWNER TO postgres;
-
---
--- TOC entry 5008 (class 0 OID 0)
--- Dependencies: 240
--- Name: address_book_sid_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
---
-
-ALTER SEQUENCE public.address_book_sid_seq OWNED BY public.address_book.sid;
-
-
---
--- TOC entry 243 (class 1259 OID 16824)
+-- TOC entry 241 (class 1259 OID 16824)
 -- Name: bankAccount_trade; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -196,7 +150,7 @@ CREATE TABLE public.currency_trade (
 ALTER TABLE public.currency_trade OWNER TO postgres;
 
 --
--- TOC entry 245 (class 1259 OID 16836)
+-- TOC entry 243 (class 1259 OID 16836)
 -- Name: function; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -212,7 +166,7 @@ CREATE TABLE public.function (
 ALTER TABLE public.function OWNER TO postgres;
 
 --
--- TOC entry 244 (class 1259 OID 16829)
+-- TOC entry 242 (class 1259 OID 16829)
 -- Name: function_group; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -262,7 +216,7 @@ CREATE TABLE public.trade_category (
 ALTER TABLE public.trade_category OWNER TO postgres;
 
 --
--- TOC entry 242 (class 1259 OID 16793)
+-- TOC entry 240 (class 1259 OID 16793)
 -- Name: user; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -277,15 +231,7 @@ CREATE TABLE public."user" (
 ALTER TABLE public."user" OWNER TO postgres;
 
 --
--- TOC entry 4791 (class 2604 OID 16787)
--- Name: address_book sid; Type: DEFAULT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.address_book ALTER COLUMN sid SET DEFAULT nextval('public.address_book_sid_seq'::regclass);
-
-
---
--- TOC entry 4753 (class 0 OID 16389)
+-- TOC entry 4748 (class 0 OID 16389)
 -- Dependencies: 220
 -- Data for Name: pga_jobagent; Type: TABLE DATA; Schema: pgagent; Owner: postgres
 --
@@ -295,7 +241,7 @@ COPY pgagent.pga_jobagent (jagpid, jaglogintime, jagstation) FROM stdin;
 
 
 --
--- TOC entry 4754 (class 0 OID 16398)
+-- TOC entry 4749 (class 0 OID 16398)
 -- Dependencies: 222
 -- Data for Name: pga_jobclass; Type: TABLE DATA; Schema: pgagent; Owner: postgres
 --
@@ -305,7 +251,7 @@ COPY pgagent.pga_jobclass (jclid, jclname) FROM stdin;
 
 
 --
--- TOC entry 4755 (class 0 OID 16408)
+-- TOC entry 4750 (class 0 OID 16408)
 -- Dependencies: 224
 -- Data for Name: pga_job; Type: TABLE DATA; Schema: pgagent; Owner: postgres
 --
@@ -315,7 +261,7 @@ COPY pgagent.pga_job (jobid, jobjclid, jobname, jobdesc, jobhostagent, jobenable
 
 
 --
--- TOC entry 4757 (class 0 OID 16456)
+-- TOC entry 4752 (class 0 OID 16456)
 -- Dependencies: 228
 -- Data for Name: pga_schedule; Type: TABLE DATA; Schema: pgagent; Owner: postgres
 --
@@ -325,7 +271,7 @@ COPY pgagent.pga_schedule (jscid, jscjobid, jscname, jscdesc, jscenabled, jscsta
 
 
 --
--- TOC entry 4758 (class 0 OID 16484)
+-- TOC entry 4753 (class 0 OID 16484)
 -- Dependencies: 230
 -- Data for Name: pga_exception; Type: TABLE DATA; Schema: pgagent; Owner: postgres
 --
@@ -335,7 +281,7 @@ COPY pgagent.pga_exception (jexid, jexscid, jexdate, jextime) FROM stdin;
 
 
 --
--- TOC entry 4759 (class 0 OID 16498)
+-- TOC entry 4754 (class 0 OID 16498)
 -- Dependencies: 232
 -- Data for Name: pga_joblog; Type: TABLE DATA; Schema: pgagent; Owner: postgres
 --
@@ -345,7 +291,7 @@ COPY pgagent.pga_joblog (jlgid, jlgjobid, jlgstatus, jlgstart, jlgduration) FROM
 
 
 --
--- TOC entry 4756 (class 0 OID 16432)
+-- TOC entry 4751 (class 0 OID 16432)
 -- Dependencies: 226
 -- Data for Name: pga_jobstep; Type: TABLE DATA; Schema: pgagent; Owner: postgres
 --
@@ -355,7 +301,7 @@ COPY pgagent.pga_jobstep (jstid, jstjobid, jstname, jstdesc, jstenabled, jstkind
 
 
 --
--- TOC entry 4760 (class 0 OID 16514)
+-- TOC entry 4755 (class 0 OID 16514)
 -- Dependencies: 234
 -- Data for Name: pga_jobsteplog; Type: TABLE DATA; Schema: pgagent; Owner: postgres
 --
@@ -365,7 +311,7 @@ COPY pgagent.pga_jobsteplog (jslid, jsljlgid, jsljstid, jslstatus, jslresult, js
 
 
 --
--- TOC entry 4989 (class 0 OID 16689)
+-- TOC entry 4981 (class 0 OID 16689)
 -- Dependencies: 235
 -- Data for Name: account_types; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -377,7 +323,7 @@ s	證券帳戶
 
 
 --
--- TOC entry 4991 (class 0 OID 16721)
+-- TOC entry 4983 (class 0 OID 16721)
 -- Dependencies: 237
 -- Data for Name: accounts_list; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -388,8 +334,8 @@ mike	mike01	123	\N	\N	\N	\N	\N	\N
 
 
 --
--- TOC entry 4997 (class 0 OID 16824)
--- Dependencies: 243
+-- TOC entry 4987 (class 0 OID 16824)
+-- Dependencies: 241
 -- Data for Name: bankAccount_trade; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -398,7 +344,7 @@ COPY public."bankAccount_trade" (trade_id, account_id, trade_datetime, account_u
 
 
 --
--- TOC entry 4992 (class 0 OID 16737)
+-- TOC entry 4984 (class 0 OID 16737)
 -- Dependencies: 238
 -- Data for Name: currency_trade; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -408,31 +354,34 @@ COPY public.currency_trade (trade_id, account_id, trade_datetime, account_user, 
 
 
 --
--- TOC entry 4999 (class 0 OID 16836)
--- Dependencies: 245
+-- TOC entry 4989 (class 0 OID 16836)
+-- Dependencies: 243
 -- Data for Name: function; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.function (function_group, function_id, function_name, url, sort) FROM stdin;
-systemSystem	accountSetting	帳戶資料	/accountSetting	1
 statement	inoutStatement	收支報表	/inoutStatement	1
+systemSetting	accountSetting	帳戶資料	/accountSetting	2
+systemSetting	userData	使用者資料	/userData	1
+financeRecord	accountRecord	帳務收支	/accountRecord	1
 \.
 
 
 --
--- TOC entry 4998 (class 0 OID 16829)
--- Dependencies: 244
+-- TOC entry 4988 (class 0 OID 16829)
+-- Dependencies: 242
 -- Data for Name: function_group; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.function_group (function_group_id, functiongroup_name, sort) FROM stdin;
-systemSystem	系統設定	1
-statement	報表	2
+systemSetting	系統設定	1
+statement	報表	3
+financeRecord	財務收支	2
 \.
 
 
 --
--- TOC entry 4993 (class 0 OID 16762)
+-- TOC entry 4985 (class 0 OID 16762)
 -- Dependencies: 239
 -- Data for Name: stockAccount_trade; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -442,7 +391,7 @@ COPY public."stockAccount_trade" (trade_id, account_id, account_user, trade_date
 
 
 --
--- TOC entry 4990 (class 0 OID 16700)
+-- TOC entry 4982 (class 0 OID 16700)
 -- Dependencies: 236
 -- Data for Name: trade_category; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -462,8 +411,8 @@ else	其他
 
 
 --
--- TOC entry 4996 (class 0 OID 16793)
--- Dependencies: 242
+-- TOC entry 4986 (class 0 OID 16793)
+-- Dependencies: 240
 -- Data for Name: user; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -473,16 +422,7 @@ mike	mike	9af15b336e6a9619928537df30b2e6a2376569fcf9d7e773eccede65606529a0	2025-
 
 
 --
--- TOC entry 5009 (class 0 OID 0)
--- Dependencies: 240
--- Name: address_book_sid_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
---
-
-SELECT pg_catalog.setval('public.address_book_sid_seq', 1, false);
-
-
---
--- TOC entry 4827 (class 2606 OID 16807)
+-- TOC entry 4821 (class 2606 OID 16807)
 -- Name: account_types account_types_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -491,7 +431,7 @@ ALTER TABLE ONLY public.account_types
 
 
 --
--- TOC entry 4831 (class 2606 OID 16803)
+-- TOC entry 4825 (class 2606 OID 16803)
 -- Name: accounts_list accounts_list_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -500,16 +440,7 @@ ALTER TABLE ONLY public.accounts_list
 
 
 --
--- TOC entry 4837 (class 2606 OID 16791)
--- Name: address_book address_book_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
---
-
-ALTER TABLE ONLY public.address_book
-    ADD CONSTRAINT address_book_pkey PRIMARY KEY (sid);
-
-
---
--- TOC entry 4841 (class 2606 OID 16835)
+-- TOC entry 4833 (class 2606 OID 16835)
 -- Name: function_group function_group_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -518,7 +449,7 @@ ALTER TABLE ONLY public.function_group
 
 
 --
--- TOC entry 4843 (class 2606 OID 16842)
+-- TOC entry 4835 (class 2606 OID 16842)
 -- Name: function function_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -527,7 +458,7 @@ ALTER TABLE ONLY public.function
 
 
 --
--- TOC entry 4835 (class 2606 OID 16823)
+-- TOC entry 4829 (class 2606 OID 16823)
 -- Name: stockAccount_trade investments_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -536,7 +467,7 @@ ALTER TABLE ONLY public."stockAccount_trade"
 
 
 --
--- TOC entry 4829 (class 2606 OID 16809)
+-- TOC entry 4823 (class 2606 OID 16809)
 -- Name: trade_category trade_category_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -545,7 +476,7 @@ ALTER TABLE ONLY public.trade_category
 
 
 --
--- TOC entry 4833 (class 2606 OID 16813)
+-- TOC entry 4827 (class 2606 OID 16813)
 -- Name: currency_trade transactions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -554,7 +485,7 @@ ALTER TABLE ONLY public.currency_trade
 
 
 --
--- TOC entry 4839 (class 2606 OID 16799)
+-- TOC entry 4831 (class 2606 OID 16799)
 -- Name: user user_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -562,7 +493,7 @@ ALTER TABLE ONLY public."user"
     ADD CONSTRAINT user_pkey PRIMARY KEY ("userId");
 
 
--- Completed on 2025-06-19 21:15:15
+-- Completed on 2025-06-20 20:49:05
 
 --
 -- PostgreSQL database dump complete

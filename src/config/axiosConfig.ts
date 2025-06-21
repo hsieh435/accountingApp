@@ -15,19 +15,6 @@ const service: AxiosInstance = axios.create({
 });
 
 
-// TODO：
-// npm install --save-dev @types/node
-
-
-// tsconfig.json
-// {
-//   "compilerOptions": {
-//     "types": ["node"]
-//     // other options...
-//   }
-// }
-
-
 
 // request interceptor 請求攔截器，送出之前做設定
 service.interceptors.request.use((config) => {

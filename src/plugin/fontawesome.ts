@@ -13,13 +13,6 @@ import { faSave, faMinusSquare, faFolderOpen, faImages, faClipboard, faComment, 
 // fal => Light
 // fab => free-brands-svg-icons
 
-//
-// TODO:
-// "@fortawesome/fontawesome-svg-core": "^6.7.2",
-// "@fortawesome/free-brands-svg-icons": "^6.7.2",
-// "@fortawesome/free-regular-svg-icons": "^6.7.2",
-// "@fortawesome/free-solid-svg-icons": "^6.7.2",
-// "@fortawesome/vue-fontawesome": "^3.0.8",
 
 
 library.add(

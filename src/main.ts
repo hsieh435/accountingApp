@@ -1,5 +1,5 @@
 import { createApp } from "vue";
-import App from "./App.vue";
+import App from "@/app.vue";
 import router from "./router";
 import store from "./store";
 import axios from "axios";
@@ -11,21 +11,18 @@ import { encryptString, decryptString } from "./tools/crypto";
 
 
 
-////////////////////////////// fontawsome
-import FontAwesomeIcon from "@/plugins/fontawsome";
-
-////////////////////////////// vuetify
-import vuetify from "@/plugins/vuetify";
+////////////////////////////// fontawesome
+import FontAwesomeIcon from "@/plugin/fontawesome";
 
 
 
 ////////////////////////////// 自定義元件
-import myLoading from "./components/ui/loading/myLoading";
-import myPagination from "./components/ui/pagination/myPagination.vue";
-import tableButton from "./components/ui/button/tableButton.vue";
-import dataButton from "./components/ui/button/dataButton.vue";
-import HmDialog from "./components/ui/dialog/dialog.vue";
-import collapseComponents from "./components/ui/collapseComponents/collapseComponents.vue";
+// import myLoading from "./components/ui/loading/myLoading";
+// import myPagination from "./components/ui/pagination/myPagination.vue";
+// import tableButton from "./components/ui/button/tableButton.vue";
+// import dataButton from "./components/ui/button/dataButton.vue";
+// import HmDialog from "./components/ui/dialog/dialog.vue";
+// import collapseComponents from "./components/ui/collapseComponents/collapseComponents.vue";
 
 
 
@@ -42,13 +39,12 @@ app
   .use(router)
   .component("font-awesome-icon", FontAwesomeIcon)
   .use(VueAxios, axios)
-  .use(vuetify)
   .mount("#app");
 
 
-app.use(myLoading);
-app.component("myPagination", myPagination);
-app.component("tableButton", tableButton);
-app.component("dataButton", dataButton);
-app.component("HmDialog", HmDialog);
-app.component("collapseComponents", collapseComponents);
+// app.use(myLoading);
+// app.component("myPagination", myPagination);
+// app.component("tableButton", tableButton);
+// app.component("dataButton", dataButton);
+// app.component("HmDialog", HmDialog);
+// app.component("collapseComponents", collapseComponents);

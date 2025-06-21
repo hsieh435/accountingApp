@@ -23,7 +23,61 @@
 
 
 
-const props = withDefaults(defineProps<{ showFilming?: boolean; filmingText?: string; showCreate?: boolean; createText?: string; createDisable?: boolean; showSave?: boolean; saveText?: string; saveDisable?: boolean; showSearch?: boolean; searchText?: string; searchDisable?: boolean; showSend?: boolean; sendText?: string; sendDisable?: boolean; showPrint?: boolean; printText?: string; printDisable?: boolean; showCopy?: boolean; copyText?: string; copyDisable?: boolean; showRemove?: boolean; removeText?: string; removeDisable?: boolean; showClose?: boolean; closeText?: string; closeDisable?: boolean }>(), { showFilming: false, filmingText: "必填欄位，不可空白", showCreate: false, createText: "新增", createDisable: false, showSave: false, saveText: "儲存", saveDisable: false, showSearch: false, searchText: "查詢", searchDisable: false, showSend: false, sendText: "送出", sendDisable: false, showPrint: false, printText: "下載", printDisable: false, showCopy: false, copyText: "複製", copyDisable: false, showRemove: false, removeText: "刪除", removeDisable: false, showClose: false, closeText: "關閉", closeDisable: false });
+const props = withDefaults(defineProps({
+  showFilming: boolean,
+  filmingText: string,
+  showCreate: boolean,
+  createText: string,
+  createDisable: boolean,
+  showSave: boolean,
+  saveText: string,
+  saveDisable: boolean,
+  showSearch: boolean,
+  searchText: string,
+  searchDisable: boolean,
+  showSend: boolean,
+  sendText: string,
+  sendDisable: boolean,
+  showPrint: boolean,
+  printText: string,
+  printDisable: boolean,
+  showCopy: boolean,
+  copyText: string,
+  copyDisable: boolean,
+  showRemove: boolean,
+  removeText: string,
+  removeDisable: boolean,
+  showClose: boolean,
+  closeText: string,
+  closeDisable: boolean
+}), {
+  showFilming: false,
+  filmingText: "必填欄位，不可空白",
+  showCreate: false,
+  createText: "新增",
+  createDisable: false,
+  showSave: false,
+  saveText: "儲存",
+  saveDisable: false,
+  showSearch: false,
+  searchText: "查詢",
+  searchDisable: false,
+  showSend: false,
+  sendText: "送出",
+  sendDisable: false,
+  showPrint: false,
+  printText: "下載",
+  printDisable: false,
+  showCopy: false,
+  copyText: "複製",
+  copyDisable: false,
+  showRemove: false,
+  removeText: "刪除",
+  removeDisable: false,
+  showClose: false,
+  closeText: "關閉",
+  closeDisable: false
+});
 const emits = defineEmits(["dataCreate", "dataSave", "dataSearch", "dataSend", "dataPrint", "dataCopy", "dataRemove", "dataClose"]);
 
 

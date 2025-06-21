@@ -1,11 +1,10 @@
 import { encryptString, decryptString } from "@/tools/crypto";
-// TODO:
 
 
 
 // set localStorage item
 export function setLocalStorageItem(key: string, storageValue: string) {
-  // localStorage.setItem(key, encryptString(storageValue));
+  localStorage.setItem(key, encryptString(storageValue));
 }
 
 
@@ -13,7 +12,7 @@ export function setLocalStorageItem(key: string, storageValue: string) {
 // get localStorage item
 export function getLocalStorageItem(key: string) {
   const data = localStorage.getItem(key);
-  // return data !== null ? decryptString(data) : "";
+  return data !== null ? decryptString(data) : "";
 }
 
 
